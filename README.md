@@ -38,3 +38,19 @@ Consigli del giorno:
 ## SVOLGIMENTO
 
 - creo pagina in HTML e CSS;
+
+- definisco Array delle slides
+- scorro tutti gli elementi dell'array (FOR) per generare le slides;
+
+- PULSANTE AVANTI
+
+  - recupero le slide
+  - alla slide che viene visualizzata tolgo la classe Active
+  - incremento l'indice della slide visualizzata
+  - mostro la nuova slide aggiungendo la classe active
+
+- PULSANTE INDIETRO
+  - recupero le slide
+  - alla slide che viene visualizzata tolgo la classe Active
+  - decremento l'indice della slide visualizzata
+  - mostro la nuova slide aggiungendo la classe active
