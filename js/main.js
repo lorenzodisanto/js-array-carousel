@@ -41,6 +41,11 @@ arrowNextEl.addEventListener("click", function () {
   newSlide.classList.add("active");
 });
 
+// SLIDER NEXT OGNI 3 SECONDI
+setInterval(function () {
+  arrowNextEl.click();
+}, 3000);
+
 // PULSANTE INDIETRO
 arrowPreviousEl.addEventListener("click", function () {
   const allSlides = document.getElementsByClassName("slide");
