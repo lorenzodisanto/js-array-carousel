@@ -20,12 +20,37 @@ for (let i = 0; i < slides.length; i++) {
     i + 1
   }" />`;
 }
-
-// console.log(slidesHtml);
 slidesContainerEl.innerHTML = slidesHtml;
 
 // PULSANTE AVANTI
 arrowNextEl.addEventListener("click", function () {
+  slideNext();
+});
+
+// PULSANTE INDIETRO
+arrowPreviousEl.addEventListener("click", function () {
+  slidePrevious();
+});
+
+// SLIDE SUCCESSIVA OGNI 3 SECONDI
+const clock = setInterval(function () {
+  slideNext();
+}, 3000);
+
+// BLOCCO SCORRIMENTO AUTOMATICO
+slidesContainerEl.addEventListener("mouseover", function () {
+  clearInterval(clock);
+});
+
+// RIPRENDO SCORRIMENTO AUTOMATICO
+slidesContainerEl.addEventListener("mouseleave", function () {
+  setInterval(function () {
+    slideNext();
+  }, 3000);
+});
+
+// FUNZIONE SLIDE SUCCESSIVA
+function slideNext() {
   const allSlides = document.getElementsByClassName("slide");
 
   const oldSlide = allSlides[imgIndex];
@@ -39,15 +64,10 @@ arrowNextEl.addEventListener("click", function () {
 
   const newSlide = allSlides[imgIndex];
   newSlide.classList.add("active");
-});
+}
 
-// SLIDER NEXT OGNI 3 SECONDI
-setInterval(function () {
-  arrowNextEl.click();
-}, 3000);
-
-// PULSANTE INDIETRO
-arrowPreviousEl.addEventListener("click", function () {
+// FUNZIONE SLIDE PRECEDENTE
+function slidePrevious() {
   const allSlides = document.getElementsByClassName("slide");
 
   const oldSlide = allSlides[imgIndex];
@@ -61,4 +81,4 @@ arrowPreviousEl.addEventListener("click", function () {
 
   const newSlide = allSlides[imgIndex];
   newSlide.classList.add("active");
-});
+}
