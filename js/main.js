@@ -33,7 +33,7 @@ arrowPreviousEl.addEventListener("click", function () {
 });
 
 // SLIDE SUCCESSIVA OGNI 3 SECONDI
-const clock = setInterval(function () {
+let clock = setInterval(function () {
   slideNext();
 }, 3000);
 
@@ -44,7 +44,7 @@ slidesContainerEl.addEventListener("mouseover", function () {
 
 // RIPRENDO SCORRIMENTO AUTOMATICO
 slidesContainerEl.addEventListener("mouseleave", function () {
-  setInterval(function () {
+  clock = setInterval(function () {
     slideNext();
   }, 3000);
 });
